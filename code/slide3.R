@@ -109,8 +109,7 @@ wrapper <- function(x, ...)
 }
 
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-pdf(file = "slide_3_heart_disease_prevalence.pdf", 
-    width = 8, height = 10, paper = "letter") 
+png(file = "slide_3_heart_disease_prevalence.png",width = 1000, height = 1000) 
 ggplot_object = ggplot(cause_data.1, aes(x = causes,y = deaths)) +
   geom_bar(stat = "identity",fill = pal_heart[1] ) +
   coord_flip() +  
