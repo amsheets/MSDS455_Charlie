@@ -85,8 +85,7 @@ wrapper <- function(x, ...)
 }
 
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-pdf(file = "slide_6_causes_of_HD.pdf", 
-    width = 8, height = 10, paper = "letter")  
+png(file = "slide_6_causes_of_HD.png",width = 1000, height = 1000))  
 ggplot_object <- ggplot(data=plot_data,
                         aes(x=factor, y=Percent)) +
   geom_bar(aes(fill = time), position = "dodge", stat="identity") +
@@ -104,8 +103,7 @@ setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 data <- read.table(file="slide7_Prevention_w_Exercise.csv",sep=",",stringsAsFactors=FALSE,header=TRUE,quote="'")
 
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-pdf(file = "slide_7_prevention_w_exercise.png", 
-    width = 8, height = 10, paper = "letter")  
+png(file = "slide_7_prevention_w_exercise.png",width = 1000, height = 1000))  
 ggplot_object <- ggplot(data=data,
                         aes(x=Gender, y=CHD_Reduction_leisure)) +
   geom_bar(aes(fill = Gender), position = "dodge", stat="identity") +
