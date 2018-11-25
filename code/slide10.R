@@ -73,16 +73,18 @@ diet_data <- data.frame(replacement = c("Polyunsaturated Fats",
                         reduction = c(50, 30, 18, 0))
 
 # Simple bar graph
+setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+png(file = "slide_10_diet_and_heartdisease.png",width = 1000, height = 1000) 
 b <- ggplot(diet_data, aes(x = reorder(replacement, -reduction), y = reduction)) + 
   xlab("Food Replacement") +
   ylab("Percent Reduction") +
   geom_bar(stat = "identity", fill = c("#FF8A80", 
                                        "#D50000", 
                                        "#FF1744",
-                                       "#B71C1C"))
-b + scale_color_discrete_heart() + 
+                                       "#B71C1C")) +
+  scale_color_discrete_heart() + 
   theme_heart() + 
   scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) + 
   ggtitle("Reduced Probability of Developing Heart Disease by \n Substituting Saturated Fats for Other Food Types") 
-
-
+print(b)
+dev.off()
