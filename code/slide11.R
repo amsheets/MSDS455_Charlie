@@ -69,4 +69,15 @@ data <- read.table(file="mortality_reduction.csv",sep=",",stringsAsFactors=FALSE
 # Simple bar graph
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 png(file = "slide_11_mortality_reduction.png",width = 1000, height = 1000) 
-
+ggplot_object <- ggplot(data=data,
+                        aes(x=Behavior, y=Mortality)) +
+  geom_bar(aes(fill = Behavior), position = "dodge", stat="identity") +
+  theme_heart() +
+  scale_fill_heart() +
+  ggtitle("Reduced Mortality by Lifestyle Behavior Modification") +
+  xlab("Behavior Modification") + 
+  ylab("Percent Reduction in Mortality") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  theme(legend.position="none")
+print(ggplot_object)
+dev.off()
