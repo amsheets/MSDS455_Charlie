@@ -60,27 +60,31 @@ theme_heart <- function(base_size = 20, base_family = "Helvetica",
     )
 }
 
+#Use stringr to modify titles 
+library(stringr)
 # Set working directory
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 
-# read in csv file
-heart_disease_deaths <- 
-  read.csv(file = "deaths-by-heart-diseases.csv", 
-           stringsAsFactors = FALSE)
+# Create fake data to recreate graph (http://www.thederrick.com/news/features/experts-heart-healthy-diet-as-effective-as-statins/article_aa659f95-386b-5249-b7ae-1b06ad201b32.html)
+diet_data <- data.frame(replacement = c("Polyunsaturated Fats",
+                                        "Monounsaturated Fats",
+                                        "Complex Carbs",
+                                        "Simple Carbs"),
+                        reduction = c(50, 30, 18, 0))
 
-#check data
-str(heart_disease_deaths)
-
-# Create Plot
+# Simple bar graph
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-png(file = "slide_11_HD_deaths_over_time.png",width = 1000, height = 1000) 
-p <- ggplot(data=heart_disease_deaths,aes(x=Year,y=Death.rate.per.100.000.population))+
-  geom_line(size=1.1, color = "#FF8A80")+
-  guides(linetype=F)+
-  scale_x_continuous(breaks = seq(1950, 2016, by = 5))+
-  labs(x="Year",y="Death Rate per 100,000 Population") +
+png(file = "slide_10_diet_and_heartdisease.png",width = 1000, height = 1000) 
+b <- ggplot(diet_data, aes(x = reorder(replacement, -reduction), y = reduction)) + 
+  xlab("Food Replacement") +
+  ylab("Percent Reduction") +
+  geom_bar(stat = "identity", fill = c("#FF8A80", 
+                                       "#D50000", 
+                                       "#FF1744",
+                                       "#B71C1C")) +
   scale_color_discrete_heart() + 
   theme_heart() + 
-  ggtitle("Deaths by heart diseases in the U.S. from 1950 to 2016")
-print(p)
+  scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) + 
+  ggtitle("Reduced Probability of Developing Heart Disease by \n Substituting Saturated Fats for Other Food Types") 
+print(b)
 dev.off()
