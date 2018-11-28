@@ -61,7 +61,7 @@ theme_heart <- function(base_size = 20, base_family = "Helvetica",
 }
 
 # set working directory
-setwd("C:/Users/ljvan/OneDrive/Documents/MSPA/MSDS 455/Heart Disease Group Project/")
+setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 
 data <- read.table(file="Heart Disease Deaths by Race and Gender.csv",sep=",",stringsAsFactors=FALSE,header=TRUE,quote="'")
 
@@ -72,26 +72,12 @@ plot_data <- reshape(data,
                      times = c("All", "Female" , "Male"),
                      direction="long")
 
-
-#plot_data <- reshape(data,
-#                     varying = c("total", "age_18_34" , "age_35_44" , "age_45_54" , "age_55_64" , "age_65_plus"),
-#                     v.names = "Percent",
-#                     idvar = "factor",
-#                     times = c("total", "age_18_34" , "age_35_44" , "age_45_54" , "age_55_64" , "age_65_plus"),
-#                     direction="long")
-
 rownames(plot_data) <- NULL
 
 plot_data$time <- factor(plot_data$time , labels=c('All','Female','Male'))
 
-
-#Function to make the title wrap since it's so long
-#wrapper <- function(x, ...) 
-#{
-#  paste(strwrap(x, ...), collapse = "\n")
-#}
-
-png(file = "slide_4_HD Deaths by Race and Gender.png",width = 1000, height = 1000)
+setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+png(file = "slide_4_HD_Deaths_by_Race_and_Gender.png",width = 1000, height = 1000)
 ggplot_object <- ggplot(data=plot_data,
                         aes(x=Race, y=Percent)) +
   geom_bar(aes(fill = time), position = "dodge", stat="identity") +
