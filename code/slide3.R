@@ -14,7 +14,7 @@ font_import()
 
 # 1. Colors ####
 
-pal_heart <- c("#FF8A80", "#D50000", "#FF1744",  "#FF5252", "#B71C1C","#7f0000")
+pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
 blue_heart <- "#3F69AA"
 
 scale_fill_heart <- function(){

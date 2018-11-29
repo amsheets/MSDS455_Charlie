@@ -7,7 +7,7 @@ lapply(list.of.packages, require, character.only = TRUE)
 ## theme
 
 # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-pal_heart <- c("#FF8A80", "#D50000", "#FF1744",  "#FF5252", "#B71C1C","#7f0000")
+pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
 blue_heart <- "#3F69AA"
 
 ############# color pieces!
@@ -78,10 +78,7 @@ png(file = "slide_10_diet_and_heartdisease.png",width = 1000, height = 1000)
 b <- ggplot(diet_data, aes(x = reorder(replacement, -reduction), y = reduction)) + 
   xlab("Food Replacement") +
   ylab("Percent Reduction") +
-  geom_bar(stat = "identity", fill = c("#FF8A80", 
-                                       "#D50000", 
-                                       "#FF1744",
-                                       "#B71C1C")) +
+  geom_bar(stat = "identity", fill = pal_heart[1:4] ) +
   scale_color_discrete_heart() + 
   theme_heart() + 
   scale_x_discrete(labels = function(x) str_wrap(x, width = 10)) + 

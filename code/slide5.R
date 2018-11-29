@@ -65,27 +65,28 @@ theme_heart <- function(base_size = 20, base_family = "Helvetica",
 # set working directory
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 
-death <- read.csv('slide_5_HD_death.csv', header = TRUE,stringsAsFactors=FALSE)
+death <- read.csv('slide5_HD_death.csv', header = TRUE,stringsAsFactors=FALSE)
 
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 
 png(file = "slide_5_HD_Deaths_by_State.png",width = 1000, height = 1000)
 p <- plot_usmap(data = death, values = "value", lines = "black") + 
-  scale_fill_continuous(name = "Number per 100,000 population (3-year average)", low="#ff9999",high="darkred",label = scales::comma) + 
+  scale_fill_continuous(name = "Number per 100,000 population (3-year average)", low="#ffe5e5",high="darkred",label = scales::comma) + 
   theme(legend.position = "right") + labs(title = "Age-adjusted number of deaths due to all cardiovascular diseases by State") +
-  theme(plot.title = element_text(color = blue_heart, face = "bold")) +
-  theme(legend.title= element_text(color=blue_heart))
+  theme(plot.title = element_text(color = blue_heart, face = "bold",size=20)) +
+  theme(legend.title= element_text(color=blue_heart,size = 16))
 
 print(p)
 dev.off()
 
 ##Try at the county level
+setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 death <- read.csv('slide5_Heart_Disease_Mortality_Data_Among_US_Adults__35___by_State_Territory_and_County.csv', header = TRUE,stringsAsFactors=FALSE)
 colnames(death)[18] <- "fips"
 
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 
-png(file = "slide_5_HD_Deaths_by_State.png",width = 1000, height = 1000)
+png(file = "slide_5_HD_Deaths_by_County.png",width = 1000, height = 1000)
 p <- plot_usmap(region='counties',data = death, values = "Data_Value", lines = "black") + 
   scale_fill_continuous(name = "Number per 100,000 population (3-year average)", low="#ff9999",high="darkred",label = scales::comma) + 
   theme(legend.position = "right") + labs(title = "Age-adjusted number of deaths due to all cardiovascular diseases by State") +
