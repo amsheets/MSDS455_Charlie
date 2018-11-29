@@ -7,6 +7,8 @@ lapply(list.of.packages, require, character.only = TRUE)
 pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
 blue_heart <- "#3F69AA"
 
+##Using this example code: http://benalexkeen.com/creating-a-timeline-graphic-using-r-and-ggplot2/
+
 # set working directory
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 
@@ -14,8 +16,6 @@ df <- read.table(file="slide8_smoking.txt",sep="\t",header=TRUE,quote="")
 
 df$start = mdy(df$start)
 df$text = factor(df$text,levels = levels(df$text)[c(6,3,2,1,4:5)])
-
-status_colors <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
 
 positions <- c(0.5, -0.5, 1.0, -1.0, 1.5, -1.5)
 directions <- c(0.5, -0.5)
