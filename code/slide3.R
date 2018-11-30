@@ -14,7 +14,7 @@ font_import()
 
 # 1. Colors ####
 
-pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
+pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 blue_heart <- "#3F69AA"
 
 scale_fill_heart <- function(){
@@ -111,7 +111,7 @@ wrapper <- function(x, ...)
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 png(file = "slide_3_heart_disease_prevalence.png",width = 1000, height = 1000) 
 ggplot_object = ggplot(cause_data.1, aes(x = causes,y = deaths)) +
-  geom_bar(stat = "identity",fill = pal_heart[1] ) +
+  geom_bar(color="black",stat = "identity",fill = pal_heart[5] ) +
   coord_flip() +  
   scale_x_discrete(limits = rev(levels(cause_data.1$causes))) +
   theme_heart() +

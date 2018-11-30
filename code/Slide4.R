@@ -7,7 +7,7 @@ lapply(list.of.packages, require, character.only = TRUE)
 ## theme
 
 # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
+pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 blue_heart <- "#3F69AA"
 
 ############# color pieces!
@@ -80,9 +80,9 @@ setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 png(file = "slide_4_HD_Deaths_by_Race_and_Gender.png",width = 1000, height = 1000)
 ggplot_object <- ggplot(data=plot_data,
                         aes(x=Race, y=Percent)) +
-  geom_bar(aes(fill = time), position = "dodge", stat="identity") +
+  geom_bar(aes(fill = time), color="black",position = "dodge", stat="identity") +
   theme_heart() +
-  scale_fill_heart() +
+  scale_fill_manual(values=pal_heart[c(2,4,6)]) +
   ggtitle("% of Heart Disease Deaths by Race and Gender as of 2008") +  
   xlab("Race") + 
   ylab("Percentage of Heart Disease Deaths") +

@@ -9,7 +9,7 @@ lapply(list.of.packages, require, character.only = TRUE)
 ## theme
 
 # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-pal_heart <- c("#FF8A80", "#D50000", "#FF1744",  "#FF5252", "#B71C1C","#7f0000")
+pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 blue_heart <- "#3F69AA"
 
 ############# color pieces!

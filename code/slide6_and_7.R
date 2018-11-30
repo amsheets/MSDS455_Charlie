@@ -7,8 +7,7 @@ lapply(list.of.packages, require, character.only = TRUE)
 ## theme
 
 # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
-#pal_heart <- c("#FF8A80", "#005b96","#D50000", "#b3cde0","#FF1744",  "#FF5252", "#B71C1C","#7f0000")
+pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 blue_heart <- "#3F69AA"
 
 ############# color pieces!
@@ -50,7 +49,7 @@ theme_heart <- function(base_size = 20, base_family = "Helvetica",
       axis.title = element_text(color = blue_heart),
       legend.background = element_blank(),
       legend.key        = element_blank(),
-      legend.title = element_blank(),
+      legend.title = element_text(color = blue_heart),
       panel.background   = element_blank(),
       panel.border      = element_blank(),
       strip.background  = element_blank(),
@@ -75,7 +74,8 @@ plot_data <- reshape(data,
 
 rownames(plot_data) <- NULL
 
-plot_data$time <- factor(plot_data$time , labels=c('18-34 year olds','35-44 year olds','45-54 year olds','55-64 year olds','65+ year olds','Overall'))
+plot_data$time <- factor(plot_data$time , labels=c('18-34','35-44','45-54','55-64','65+','Overall'))
+
 
 ##Bar graph to illustrate mean rating by grad year/program
 
@@ -89,9 +89,9 @@ setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 png(file = "slide_6_causes_of_HD.png",width = 1000, height = 1000)
 ggplot_object <- ggplot(data=plot_data,
                         aes(x=factor, y=Percent)) +
-  geom_bar(aes(fill = time), position = "dodge", stat="identity") +
+  geom_bar(aes(fill = time),colour="black", position = "dodge", stat="identity") +
   theme_heart() +
-  scale_fill_heart() +
+  scale_fill_manual(name="Age, in years",values=pal_heart) +
   ggtitle(wrapper("Percentage of U.S. adults with cardiovascular conditions that had select lifestyle habits as of 2018, by age",width=55)) +
   xlab("Lifestyle Habit") + 
   ylab("Percentage of Adult Population") +
@@ -107,9 +107,9 @@ setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
 png(file = "slide_7_prevention_w_exercise.png",width = 1000, height = 1000) 
 ggplot_object <- ggplot(data=data,
                         aes(x=Gender, y=CHD_Reduction_leisure)) +
-  geom_bar(aes(fill = Gender), position = "dodge", stat="identity") +
+  geom_bar(aes(fill = Gender), color='black', position = "dodge", stat="identity") +
   theme_heart() +
-  scale_fill_heart() +
+  scale_fill_manual(values=pal_heart[c(2,6)]) +
   ggtitle(wrapper("Percentage Reduction in Coronary Heart Disease Events Due to Leisure Time Physical Activity",width=55)) +
   xlab("Gender") + 
   ylab("Percent Reduction") +

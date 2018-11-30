@@ -7,7 +7,7 @@ lapply(list.of.packages, require, character.only = TRUE)
 ## theme
 
 # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
-pal_heart <- c("#ff0000", "#7f0000", "#ff6666",  "#ffb2b2", "#E9967A","#A52A2A")
+pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 blue_heart <- "#3F69AA"
 
 ############# color pieces!
@@ -73,9 +73,9 @@ str(heart_disease_deaths)
 
 # Create Plot
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-png(file = "slide_11_HD_deaths_over_time.png",width = 1000, height = 1000) 
+png(file = "slide_10_HD_deaths_over_time.png",width = 1000, height = 500) 
 p <- ggplot(data=heart_disease_deaths,aes(x=Year,y=Death.rate.per.100.000.population))+
-  geom_line(size=1.1, color = "#FF8A80")+
+  geom_line(size=1.1, color = "#de2d26")+
   guides(linetype=F)+
   scale_x_continuous(breaks = seq(1950, 2016, by = 5))+
   labs(x="Year",y="Death Rate per 100,000 Population") +
