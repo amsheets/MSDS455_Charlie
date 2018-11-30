@@ -4,4 +4,4 @@ start	end	text
 11/1/19	11/1/19	After only 1 year, the risk of coronary heart disease is about half that of a smoker.
 11/1/23	11/1/23	After only 5 years, the risk of stroke is reduced to that of a non-smoker.
 11/1/28	11/1/28	At 10 years, the risk of lung cancer falls to about half that of a smoker and cancer risk decreases.
-11/1/33	11/1/33	At 15 years, the  risk of coronary heart diseaseis that of a person who never smoked.
+11/1/33	11/1/33	At 15 years, the  risk of coronary heart disease is that of a person who never smoked.
