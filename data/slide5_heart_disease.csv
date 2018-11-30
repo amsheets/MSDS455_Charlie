@@ -1,0 +1,53 @@
+state,rank,value
+Utah,1,2.4
+Alaska,2,2.8
+Colorado,3,3.1
+California,4,3.3
+Minnesota,5,3.5
+Connecticut,6,3.6
+Hawaii,6,3.6
+Vermont,6,3.6
+Virginia,6,3.6
+Montana,10,3.7
+Texas,10,3.7
+Washington,10,3.7
+Maryland,13,3.8
+Nebraska,13,3.8
+Idaho,15,3.9
+Illinois,15,3.9
+Iowa,15,3.9
+Kansas,15,3.9
+New Jersey,15,3.9
+Delaware,20,4
+Massachusetts,20,4
+New Mexico,20,4
+Rhode Island,20,4
+Wyoming,20,4
+North Dakota,25,4.1
+New Hampshire,26,4.2
+New York,26,4.2
+Arizona,28,4.4
+Nevada,28,4.4
+Oregon,30,4.5
+Georgia,31,4.6
+Pennsylvania,31,4.6
+South Carolina,31,4.6
+Wisconsin,31,4.6
+Florida,35,4.7
+Missouri,35,4.7
+North Carolina,35,4.7
+South Dakota,38,4.8
+Indiana,39,4.9
+Ohio,39,4.9
+Oklahoma,39,4.9
+Michigan,42,5.1
+Maine,43,5.2
+Tennessee,44,5.4
+Louisiana,45,5.8
+Mississippi,46,5.9
+Alabama,47,6.1
+Kentucky,48,6.8
+Arkansas,49,7.1
+West Virginia,50,8
+United States,•,4.1
+District of Columbia,•,2.3
