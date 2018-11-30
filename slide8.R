@@ -70,10 +70,10 @@ timeline_plot<-timeline_plot+geom_hline(yintercept=0,
                                         color = blue_heart, size=0.3)
 
 # Plot vertical segment lines for milestones
-timeline_plot<-timeline_plot+geom_segment(data=df[df$month_count == 1,], aes(y=position,yend=0,xend=start), color=blue_heart, size=2)
+timeline_plot<-timeline_plot+geom_segment(data=df[df$month_count == 1,], aes(y=position,yend=0,xend=start), color=blue_heart, size=2,linetype=2)
 
 # Plot scatter points at zero and date
-timeline_plot<-timeline_plot+geom_point(aes(y=0), size=10,color=pal_heart)
+timeline_plot<-timeline_plot+geom_point(aes(y=0), size=15,color=pal_heart)
 
 # Don't show axes, remove legend
 timeline_plot<-timeline_plot+theme(axis.line.y=element_blank(),
