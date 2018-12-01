@@ -15,7 +15,7 @@ setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 df <- read.table(file="slide8_smoking.txt",sep="\t",header=TRUE,quote="")
 
 df$start = mdy(df$start)
-df$text = factor(df$text,levels = levels(df$text)[c(7,4,2:3,5:6,1)])
+df$text = factor(df$text,levels = levels(df$text)[c(6,3,1:2,4:5)])
 
 positions <- c(0.5, -0.5, 0.75, -0.75, 0.3, -0.5)
 directions <- c(1, -1)

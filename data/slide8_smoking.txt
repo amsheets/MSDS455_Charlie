@@ -1,6 +1,6 @@
 start	end	text
 11/1/18	11/1/18	In 20 minutes heart rate and blood pressure drop.
-5/1/18	5/1/18	After only 6 months, circulation improves, lung function increasese and coughing and shortness of breath decrease.
+5/1/19	5/1/19	After only 6 months, circulation improves, lung function increasese and coughing and shortness of breath decrease.
 11/1/19	11/1/19	After only 1 year, the risk of coronary heart disease is about half that of a smoker.
 11/1/23	11/1/23	After only 5 years, the risk of stroke is reduced to that of a non-smoker.
 11/1/28	11/1/28	At 10 years, the risk of lung cancer falls to about half that of a smoker and cancer risk decreases.
