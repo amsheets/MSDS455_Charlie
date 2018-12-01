@@ -4,7 +4,7 @@ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only = TRUE)
 
-pal_heart <- c('#a50f15','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
+pal_heart <- c('#a50f15','#fb6a4a','#fc9272','#a50f15','#fb6a4a','#fc9272')
 blue_heart <- "#3F69AA"
 
 ##Using this example code: http://benalexkeen.com/creating-a-timeline-graphic-using-r-and-ggplot2/
