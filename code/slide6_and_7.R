@@ -33,7 +33,7 @@ scale_color_continuous_heart <- function(){
 }
 ##################################
 
-theme_heart <- function(base_size = 20, base_family = "Helvetica",
+theme_heart <- function(base_size = 30, base_family = "Helvetica",
                           base_line_size = base_size / 42,
                           base_rect_size = base_size / 42) {
   # Starts with theme_bw and remove most parts
@@ -45,7 +45,7 @@ theme_heart <- function(base_size = 20, base_family = "Helvetica",
   ) %+replace%
     theme(
       axis.ticks      = element_blank(),
-      axis.text       = element_text(size = 16,color=blue_heart),
+      axis.text       = element_text(size = 25,color=blue_heart),
       axis.title = element_text(color = blue_heart),
       legend.background = element_blank(),
       legend.key        = element_blank(),

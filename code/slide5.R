@@ -60,7 +60,7 @@ aggr.heart$region <- as.character(aggr.heart$region)
 
 # Set visualization directory
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-png(file = "slide_5_HD_by_State.png",width = 1000, height = 1000) 
+png(file = "slide_5_HD_by_State.png",width = 1000, height = 500) 
 
 #Create choropleth map
 c <- StateChoropleth$new(aggr.heart)
@@ -77,6 +77,7 @@ c$set_num_colors(1)
 #Remove state labels
 c$show_labels = FALSE
 #Render map and add color for titles
-c$render() + theme(plot.title = element_text(color = "#3F69AA"),
-                   legend.title = element_text(color = "#3F69AA"))
+c$render() + theme(plot.title = element_text(color = "#3F69AA",size = 25),
+                   legend.title = element_text(color = "#3F69AA",size=20))
 dev.off()
+

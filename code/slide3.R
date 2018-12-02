@@ -36,7 +36,7 @@ scale_color_continuous_heart <- function(){
 }
 # 2. Themes #####
 
-theme_heart <- function(base_size = 20, base_family = "Helvetica",
+theme_heart <- function(base_size = 30, base_family = "Helvetica",
                         base_line_size = base_size / 42,
                         base_rect_size = base_size / 42) {
   # Starts with theme_bw and remove most parts
@@ -48,7 +48,7 @@ theme_heart <- function(base_size = 20, base_family = "Helvetica",
   ) %+replace%
     theme(
       axis.ticks      = element_blank(),
-      axis.text       = element_text(size = 16,color=blue_heart),
+      axis.text       = element_text(size = 25,color=blue_heart),
       axis.title = element_text(color = blue_heart),
       legend.background = element_blank(),
       legend.key        = element_blank(),
@@ -109,13 +109,13 @@ wrapper <- function(x, ...)
 }
 
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
-png(file = "slide_3_heart_disease_prevalence.png",width = 1000, height = 1000) 
+png(file = "slide_3_heart_disease_prevalence.png",width = 1200, height = 1000) 
 ggplot_object = ggplot(cause_data.1, aes(x = causes,y = deaths)) +
   geom_bar(color="black",stat = "identity",fill = pal_heart[5] ) +
   coord_flip() +  
   scale_x_discrete(limits = rev(levels(cause_data.1$causes))) +
   theme_heart() +
-  ggtitle(wrapper("Rates of the 10 leading causes of death in the United States in 2016 (per 100,000 population)",width=55)) +
+  ggtitle(wrapper("Rates of the 10 leading causes of death in the United States in 2016 (per 100,000 population)",width=40)) +
   ylab("Deaths per 100,000") + 
   xlab("Cause of Death") +
   theme(legend.position="none")
