@@ -83,7 +83,7 @@ ggplot_object <- ggplot(data=plot_data,
   geom_bar(aes(fill = time), color="black",position = "dodge", stat="identity") +
   theme_heart() +
   scale_fill_manual(values=pal_heart[c(2,4,6)]) +
-  ggtitle("% of Heart Disease Deaths by Race and Gender as of 2008") +  
+  ggtitle("% of Heart Disease Deaths by Race and Gender as of 2016") +  
   xlab("Race") + 
   ylab("Percentage of Heart Disease Deaths") +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
