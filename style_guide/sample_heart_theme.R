@@ -6,6 +6,14 @@ require(ggthemes)
 # https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 blue_heart <- "#3F69AA"
+#ten color pallette:
+# c('#fee5d9', #part of the current palette
+#   '#fcbba1', '#fc9272',
+#   '#FF6666', 
+#   '#fb6a4a','#de2d26','#a50f15', 
+#   'darkred',
+#   '#660000', 
+#   '#330000'))
 
 ############# color pieces!
 scale_fill_heart <- function(){
