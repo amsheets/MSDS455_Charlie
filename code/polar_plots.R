@@ -7,7 +7,6 @@ setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
 
 load("polar_plots.RData")
 
-
 theme_heart <- function(base_size = 20, base_family = "Helvetica",
                         base_line_size = base_size / 42,
                         base_rect_size = base_size / 42) {
@@ -52,8 +51,6 @@ scale_color_ts_heart <- function(){
     scale_color_manual(values = pal_ts)
   ))
 }
-
-# get the number of observations to turn into percentages =====
 
 # PLOT THE HEART ATTACK TIME SERIES IN POLAR FORM
 setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
