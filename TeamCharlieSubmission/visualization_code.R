@@ -68,7 +68,7 @@ theme_heart <- function(base_size = 30, base_family = "Helvetica",
 ##############################
 
 # 3. Data Manipulation ####
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 cause_data = read.csv("slide3_leading_causes_death_us_2016.csv", header = TRUE,
                       stringsAsFactors = FALSE)
 
@@ -86,7 +86,7 @@ wrapper <- function(x, ...)
   paste(strwrap(x, ...), collapse = "\n")
 }
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_3_heart_disease_prevalence.png",width = 1200, height = 1000) 
 ggplot_object = ggplot(cause_data.1, aes(x = causes,y = deaths)) +
   geom_bar(color="black",stat = "identity",fill = pal_heart[5] ) +
@@ -106,7 +106,7 @@ dev.off()
 ##############################
 
 # set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
 data <- read.table(file="Heart Disease Deaths by Race and Gender.csv",sep=",",stringsAsFactors=FALSE,header=TRUE,quote="'")
 
@@ -121,7 +121,7 @@ rownames(plot_data) <- NULL
 
 plot_data$time <- factor(plot_data$time , labels=c('All','Female','Male'))
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_4_HD_Deaths_by_Race_and_Gender.png",width = 1000, height = 1000)
 ggplot_object <- ggplot(data=plot_data,
                         aes(x=Race, y=Percent)) +
@@ -141,7 +141,7 @@ dev.off()
 ##############################
 
 # Set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
 #Load in data
 heart <- read.csv("slide5_HD_death.csv", header = TRUE) 
@@ -157,7 +157,7 @@ colnames(aggr.heart)[2] <- "value"
 aggr.heart <- aggr.heart[-c(49,43,4,28,52,13), ]
 
 
-####### We need to convert the state abbreviations to state names for choroplethr. This is a function to convert state codes to state names courtesy of https://favorableoutcomes.wordpress.com/2012/10/19/create-an-r-function-to-convert-state-codes-to-full-state-name/
+####### We need to convert the state abbreviations to state names for choroplethr. This is a function to convert state codes to state names courtesy of https:/favorableoutcomes.wordpress.com/2012/10/19/create-an-r-function-to-convert-state-codes-to-full-state-name/
 
 #'x' is the column of a data.frame that holds 2 digit state codes
 stateFromLower <-function(x) {
@@ -195,7 +195,7 @@ aggr.heart$region <- stateFromLower(aggr.heart$region)
 aggr.heart$region <- as.character(aggr.heart$region)
 
 # Set visualization directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_5_HD_by_State.png",width = 1000, height = 500) 
 
 #Create choropleth map
@@ -225,7 +225,7 @@ dev.off()
 pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#D3D3D3')
 
 # set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
 data <- read.table(file="slide6_lifestyle-habits-of-us-adults-diagnosed-with-cardiovascular-conditions-2018-by-age.csv",sep=",",stringsAsFactors=FALSE,header=TRUE,quote="'")
 
@@ -249,7 +249,7 @@ wrapper <- function(x, ...)
   paste(strwrap(x, ...), collapse = "\n")
 }
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_6_causes_of_HD.png",width = 1000, height = 1000)
 ggplot_object <- ggplot(data=plot_data,
                         aes(x=factor, y=Percent)) +
@@ -264,14 +264,14 @@ ggplot_object <- ggplot(data=plot_data,
 print(ggplot_object)
 dev.off()
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 data <- read.table(file="slide7_Prevention_w_Exercise.csv",sep=",",stringsAsFactors=FALSE,header=TRUE,quote="'")
 
 ##############################
 #          SLIDE 9           #
 ##############################
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_7_prevention_w_exercise.png",width = 1000, height = 1000) 
 ggplot_object <- ggplot(data=data,
                         aes(x=Gender, y=CHD_Reduction_leisure)) +
@@ -293,10 +293,10 @@ dev.off()
 #Reset heart palette
 pal_heart <- c('#a50f15','#fb6a4a','#fc9272','#a50f15','#fb6a4a','#fc9272')
 
-##Using this example code: http://benalexkeen.com/creating-a-timeline-graphic-using-r-and-ggplot2/
+##Using this example code: http:/benalexkeen.com/creating-a-timeline-graphic-using-r-and-ggplot2/
 
 # set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
 df <- read.table(file="slide8_smoking.txt",sep="\t",header=TRUE,quote="")
 
@@ -344,7 +344,7 @@ df$box_ymin <- df$text_position - (df$h/4)
 df$box_ymax <- df$text_position + (df$h/4)
 
 #### PLOT ####
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_8_smoking.png",width = 2500, height = 1600) 
 timeline_plot<-ggplot(df,aes(x=start,y=0, col=text))
 timeline_plot<-timeline_plot+labs(col="Milestones")
@@ -392,9 +392,9 @@ dev.off()
 pal_heart <- c('#fee5d9','#fcbba1','#fc9272','#fb6a4a','#de2d26','#a50f15')
 
 # Set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
-# Create fake data to recreate graph (http://www.thederrick.com/news/features/experts-heart-healthy-diet-as-effective-as-statins/article_aa659f95-386b-5249-b7ae-1b06ad201b32.html)
+# Create fake data to recreate graph (http:/www.thederrick.com/news/features/experts-heart-healthy-diet-as-effective-as-statins/article_aa659f95-386b-5249-b7ae-1b06ad201b32.html)
 diet_data <- data.frame(replacement = c("Polyunsaturated Fats",
                                         "Monounsaturated Fats",
                                         "Complex Carbs",
@@ -402,7 +402,7 @@ diet_data <- data.frame(replacement = c("Polyunsaturated Fats",
                         reduction = c(50, 30, 18, 0))
 
 # Simple bar graph
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_9_diet_and_heartdisease.png",width = 1000, height = 1000) 
 b <- ggplot(diet_data, aes(x = reorder(replacement, -reduction), y = reduction)) + 
   xlab("Food Replacement") +
@@ -420,7 +420,7 @@ dev.off()
 ##############################
 
 # Set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
 # read in csv file
 heart_disease_deaths <- 
@@ -431,7 +431,7 @@ heart_disease_deaths <-
 str(heart_disease_deaths)
 
 # Create Plot
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_10_HD_deaths_over_time.png",width = 1000, height = 500) 
 p <- ggplot(data=heart_disease_deaths,aes(x=Year,y=Death.rate.per.100.000.population))+
   geom_line(size=1.1, color = "#de2d26")+
@@ -449,11 +449,11 @@ dev.off()
 ##############################
 
 # Set working directory
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 data <- read.table(file="mortality_reduction.csv",sep=",",stringsAsFactors=FALSE,header=TRUE,quote="'")
 
 # Simple bar graph
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "slide_11_mortality_reduction.png",width = 1000, height = 1000) 
 ggplot_object <- ggplot(data=data,
                         aes(x=Behavior, y=Mortality)) +
@@ -472,7 +472,7 @@ dev.off()
 #          SLIDE X          #
 ##############################
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/data")
+setwd("~/MSDS455_Charlie/data")
 
 load("polar_plots.RData")
 
@@ -496,27 +496,27 @@ scale_color_ts_heart <- function(){
 }
 
 # PLOT THE HEART ATTACK TIME SERIES IN POLAR FORM
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "BRFSS_PolarPlot_HeartAttacks.png",width = 1000, height = 1000)
 gg_ha = ggseasonplot(ha.ts, polar = TRUE) +
   geom_line(size = 1.25) +
   ggtitle("BRFSS Survey Data 2008 - 2017,\nMississippi Respondents\nwith Heart Attacks") +
   theme_heart() +
   labs(y = "% of Respondents with Heart Attacks", 
-       caption = "https://www.cdc.gov/brfss/") +
+       caption = "https:/www.cdc.gov/brfss/") +
   scale_color_ts_heart()
 
 print(gg_ha)
 dev.off()
 
-setwd("~/Documents/GradSchool/MSDS455/git_repos/MSDS455_Charlie/visualizations")
+setwd("~/MSDS455_Charlie/visualizations")
 png(file = "BRFSS_PolarPlot_AnginaCoronaries.png",width = 1000, height = 1000)
 gg_angc = ggseasonplot(angc.ts, polar = TRUE) +
   geom_line(size = 1.25) +
   ggtitle("BRFSS Survey Data 2008 - 2017,\nMississippi Respondents\nwith Angina Coronaries") +
   theme_heart() +
   labs(y = "% of Respondents with Angina Coronaries", 
-       caption = "https://www.cdc.gov/brfss/") +
+       caption = "https:/www.cdc.gov/brfss/") +
   scale_color_ts_heart()
 
 print(gg_angc)
